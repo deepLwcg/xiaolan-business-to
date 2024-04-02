@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>buzz.xiaolan</groupId>
+    <artifactId>xiaolan-business-to-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+
+    <name>xiaolan-business-to-parent</name>
+    <description>xiaolan-business-to-parent</description>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <kotlin.version>1.9.23</kotlin.version>
+
+        <spring-boot.version>2.3.7.RELEASE</spring-boot.version>
+
+        <!-- https://mvnrepository.com/artifact/cn.hutool/hutool-all -->
+        <!-- Hutool是一个小而全的Java工具类库，通过静态方法封装，降低相关API的学习成本，提高工作效率，使Java拥有函数式语言般的优雅，让Java语言也可以“甜甜的”。 -->
+        <hutool-all.version>5.8.26</hutool-all.version>
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-collections4 -->
+        <!-- Apache Commons Collections 软件包包含扩展和增强 Java Collections Framework 的类型。 -->
+        <commons-collections4.version>4.4</commons-collections4.version>
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+        <!-- Apache Commons Lang，一个 Java 实用程序类包，用于 java.lang 层次结构中的类，或者被认为是标准类，以证明 java.lang 中的存在是合理的。 -->
+        <commons-lang3.version>3.14.0</commons-lang3.version>
+        <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+        <!-- Apache Commons IO 库包含实用程序类、流实现、文件过滤器、文件比较器、字节序转换类等等。 -->
+        <commons-io.version>2.15.1</commons-io.version>
+        <!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+        <!-- Apache Commons Codec 组件包含各种格式的编码器和解码器，例如 Base16、Base32、Base64、digest 和 Hexadecimal。除了这些广泛使用的编码器和解码器之外，编解码器包还维护了一系列语音编码实用程序。 -->
+        <commons-codec.version>1.16.1</commons-codec.version>
+        <!-- https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils -->
+        <!-- Apache Commons BeanUtils 提供了一个易于使用但灵活的反射和内省包装器。 -->
+        <commons-beanutils.version>1.9.4</commons-beanutils.version>
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-compress -->
+        <!-- Apache Commons Compress 定义了一个用于处理压缩和存档格式的 API。其中包括 bzip2、gzip、pack200、LZMA、XZ、Snappy、传统的 Unix Compress、DEFLATE、DEFLATE64、LZ4、Brotli、Zstandard 和 ar、cpio、jar、tar、zip、dump、7z、arj。 -->
+        <commons-compress.version>1.26.0</commons-compress.version>
+        <!-- https://mvnrepository.com/artifact/commons-cli/commons-cli -->
+        <!-- ApacheCommonsCLI提供了一个简单的API，用于显示、处理和验证命令行界面。-->
+        <commons-cli.version>1.6.0</commons-cli.version>
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-math3 -->
+        <!-- Apache Commons Math 项目是一个轻量级、独立的数学和统计组件库，用于解决 Java 编程语言或 commons-lang 中无法立即获得的最常见实际问题。 -->
+        <commons-math3.version>3.6.1</commons-math3.version>
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-pool2 -->
+        <!-- Apache Commons 对象池库。 -->
+        <commons-pool2.version>2.12.0</commons-pool2.version>
+        <!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+        <!-- Apache Commons FileUpload 组件提供了一种简单而灵活的方法，用于向 servlet 和 Web 应用程序添加对分段文件上传功能的支持。 -->
+        <commons-fileupload.version>1.5</commons-fileupload.version>
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-text -->
+        <!-- Commons Text 库提供了对标准 JDK 文本处理的补充。它包括用于字符串相似度和计算字符串之间距离的算法。 -->
+        <commons-text.version>1.11.0</commons-text.version>
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-configuration2 -->
+        <!-- 协助读取各种格式的配置/首选项文件的工具 -->
+        <commons-configuration2.version>2.9.0</commons-configuration2.version>
+        <!-- https://mvnrepository.com/artifact/commons-validator/commons-validator -->
+        <!-- Apache Commons Validator 为客户端验证和服务器端数据验证提供了构建块。它可以单独使用，也可以与 Struts 等框架一起使用。 -->
+        <commons-validator.version>1.8.0</commons-validator.version>
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-email -->
+        <!-- Apache Commons Email 提供了一个用于发送电子邮件的 API，简化了 JavaMail API。 -->
+        <commons-email.version>1.6.0</commons-email.version>
+
+        <!-- https://mvnrepository.com/artifact/com.alibaba.fastjson2/fastjson2 -->
+        <!-- Fastjson 是用 Java 编写的 JSON 处理器（JSON 解析器 + JSON 生成器） -->
+        <fastjson2.version>2.0.47</fastjson2.version>
+        <!-- https://mvnrepository.com/artifact/com.alibaba/easyexcel -->
+        <!-- easyexcel是一个用Java编写的excel句柄工具 -->
+        <easyexcel.version>3.3.3</easyexcel.version>
+        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+        <!-- Apache POI-Java API访问Microsoft格式文件 -->
+        <poi.version>5.2.5</poi.version>
+        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+        <!-- Apache POI-Java API访问Microsoft格式文件 -->
+        <poi-ooxml.version>5.2.5</poi-ooxml.version>
+        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml-schemas -->
+        <!-- Apache POI-Java API访问Microsoft格式文件 -->
+        <poi-ooxml-schemas.version>4.1.2</poi-ooxml-schemas.version>
+        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-scratchpad -->
+        <!-- Apache POI-Java API访问Microsoft格式文件（草稿页） -->
+        <poi-scratchpad.version>5.2.5</poi-scratchpad.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.fastjson2</groupId>
+            <artifactId>fastjson2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib-jdk8</artifactId>
+            <version>${kotlin.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib-jdk7</artifactId>
+            <scope>compile</scope>
+            <version>${kotlin.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib</artifactId>
+            <scope>compile</scope>
+            <version>${kotlin.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-test</artifactId>
+            <version>${kotlin.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>easyexcel</artifactId>
+                <version>${easyexcel.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.fastjson2</groupId>
+                <artifactId>fastjson2</artifactId>
+                <version>${fastjson2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-email</artifactId>
+                <version>${commons-email.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-validator</groupId>
+                <artifactId>commons-validator</artifactId>
+                <version>${commons-validator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-configuration2</artifactId>
+                <version>${commons-configuration2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-text</artifactId>
+                <version>${commons-text.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-fileupload</groupId>
+                <artifactId>commons-fileupload</artifactId>
+                <version>${commons-fileupload.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+                <version>${commons-pool2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-math3</artifactId>
+                <version>${commons-math3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-cli</groupId>
+                <artifactId>commons-cli</artifactId>
+                <version>${commons-cli.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-compress</artifactId>
+                <version>${commons-compress.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-beanutils</groupId>
+                <artifactId>commons-beanutils</artifactId>
+                <version>${commons-beanutils.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>${commons-codec.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>${commons-collections4.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool-all.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi-ooxml.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml-schemas</artifactId>
+                <version>${poi-ooxml-schemas.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-scratchpad</artifactId>
+                <version>${poi-scratchpad.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>2.16.2</version>
+                <configuration>
+                    <generateBackupPoms>false</generateBackupPoms>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <attach>true</attach>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-maven-plugin</artifactId>
+                <version>${kotlin.version}</version>
+                <executions>
+                    <execution>
+                        <id>compile</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>test-compile</id>
+                        <phase>test-compile</phase>
+                        <goals>
+                            <goal>test-compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <jvmTarget>1.8</jvmTarget>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <executions>
+                    <execution>
+                        <id>default-compile</id>
+                        <phase>none</phase>
+                    </execution>
+                    <execution>
+                        <id>default-testCompile</id>
+                        <phase>none</phase>
+                    </execution>
+                    <execution>
+                        <id>compile</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>testCompile</id>
+                        <phase>test-compile</phase>
+                        <goals>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
