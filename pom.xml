@@ -21,6 +21,7 @@
         <module>xiaolan-elasticsearch</module>
         <module>xiaolan-exception</module>
         <module>xiaolan-wechat</module>
+        <module>xiaolan-shell</module>
     </modules>
 
     <properties>

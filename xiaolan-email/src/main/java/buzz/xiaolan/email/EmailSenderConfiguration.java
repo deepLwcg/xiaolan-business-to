@@ -17,7 +17,8 @@ import org.thymeleaf.TemplateEngine;
 @ComponentScan(basePackages = "buzz.xiaolan.email")
 public class EmailSenderConfiguration {
 
-    @Value("${spring.mail.username}")
+
+    @Value("${spring.mail.username:xiaolan}")
     private String from;
 
     @Bean

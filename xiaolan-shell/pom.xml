@@ -26,7 +26,11 @@
     </properties>
     <dependencies>
 
-
+        <dependency>
+            <groupId>buzz.xiaolan</groupId>
+            <artifactId>xiaolan-exception</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>buzz.xiaolan</groupId>
             <artifactId>xiaolan-common</artifactId>
